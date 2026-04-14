@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataLens AI</title>
+    <link rel="icon" type="image/png" href="datalens.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-logo">DataLens AI</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li><a href="personas.html">Población</a></li>
+            <li><a href="economia.html">Finanzas</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="home-hero">
+        <div class="badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            Proyecto CTS · Universidad Central
+        </div>
+        <h1>Gestión inteligente<br>para el <em>albergue</em></h1>
+        <p class="subtitle">Plataforma de análisis con Inteligencia Artificial para optimizar la toma de decisiones en habitabilidad y recursos.</p>
+        <p class="university">Bogotá D.C. · Colombia</p>
+    </section>
+
+    <!-- STATS -->
+    <div class="stats-strip">
+        <div class="stat-item">
+            <div class="num">2</div>
+            <div class="lbl">Módulos activos</div>
+        </div>
+        <div class="stat-item">
+            <div class="num">IA</div>
+            <div class="lbl">Motor de análisis</div>
+        </div>
+        <div class="stat-item">
+            <div class="num">24/7</div>
+            <div class="lbl">Disponibilidad</div>
+        </div>
+    </div>
+
+    <!-- SECTION TITLE -->
+    <div class="home-divider">
+        <span>Módulos del sistema</span>
+    </div>
+
+    <!-- CARDS -->
+    <div class="modes-grid">
+        <div class="mode-card">
+            <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Análisis de Población</h3>
+            <p>Identifica patrones demográficos, necesidades de salud y perfiles de los habitantes mediante procesamiento inteligente de datos.</p>
+            <a href="personas.html" class="btn-link">
+                Ir a Análisis
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+
+        <div class="mode-card green-card">
+            <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#0d7a4e" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 10h2M11 10h6M7 13h4M15 13h2"/></svg>
+            </div>
+            <h3>Gestión Económica</h3>
+            <p>Analiza ingresos, egresos y oportunidades de ahorro para garantizar la sostenibilidad financiera del albergue.</p>
+            <a href="economia.html" class="btn-link">
+                Ir a Finanzas
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Albergue Central · Proyecto Ciencia, Tecnología y Sociedad · Universidad Central
+    </footer>
+
+    <script>
+        const nav = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 10);
+        });
+    </script>
+</body>
+</html>

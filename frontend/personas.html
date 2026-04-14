@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataLens AI</title>
+    <link rel="icon" type="image/png" href="datalens.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-logo">DataLens AI</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="personas.html" class="active">Población</a></li>
+            <li><a href="economia.html">Finanzas</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-wrap">
+
+        <!-- HEADER -->
+        <div class="page-hero">
+            <div class="eyebrow">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                Módulo Poblacional
+            </div>
+            <h1>Análisis de Población</h1>
+            <p>Identificación de tendencias demográficas y perfiles sociales mediante procesamiento inteligente de datos.</p>
+        </div>
+
+        <!-- DROP ZONE -->
+        <div class="upload-card" id="dropZone" onclick="document.getElementById('excelFile').click()">
+            <div class="upload-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="1.8"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            </div>
+            <h3>Cargar archivo de habitantes</h3>
+            <p>Arrastre el archivo Excel aquí o haga clic para seleccionar<br><span style="font-size:0.78rem;opacity:0.7">Formatos permitidos: .xlsx, .xls</span></p>
+            <input type="file" id="excelFile" hidden accept=".xlsx, .xls">
+            <p id="fileNameDisplay" class="file-name-info"></p>
+        </div>
+
+        <!-- BUTTON -->
+        <button id="uploadBtn" class="btn-main">
+            Ejecutar Análisis Poblacional
+        </button>
+
+        <!-- RESULT -->
+        <section class="result-section">
+            <div class="result-label">Resultado del análisis</div>
+            <div id="resultArea" class="result-box">
+                <p class="placeholder">El sistema está a la espera de un conjunto de datos para iniciar el análisis.</p>
+            </div>
+        </section>
+
+        <a href="index.html" class="back-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Volver al panel principal
+        </a>
+
+    </div>
+
+    <footer>
+        © 2025 Albergue Central · Universidad Central, Bogotá D.C.
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const nav = document.getElementById('navbar');
+        window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 10));
+
+        // Drag & drop styling
+        const zone = document.getElementById('dropZone');
+        zone.addEventListener('dragover', e => { e.preventDefault(); zone.style.borderColor = 'var(--blue-mid)'; });
+        zone.addEventListener('dragleave', () => { zone.style.borderColor = ''; });
+        zone.addEventListener('drop', e => {
+            e.preventDefault();
+            zone.style.borderColor = '';
+            const file = e.dataTransfer.files[0];
+            if (file) {
+                document.getElementById('excelFile').files = e.dataTransfer.files;
+                document.getElementById('fileNameDisplay').textContent = file.name;
+            }
+        });
+        document.getElementById('excelFile').addEventListener('change', function() {
+            if (this.files[0]) document.getElementById('fileNameDisplay').textContent = this.files[0].name;
+        });
+    </script>
+</body>
+</html>
